@@ -14,18 +14,18 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-21T20:08:18+01:00">2014-02-21T20:08:18+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-21T20:53:38+01:00">2014-02-21T20:53:38+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.08%</span></span>
+    (<span class="covered_percent"><span class="green">96.15%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.57
+         1.35
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>5</b> files in total.
     <b>52</b> relevant lines. 
-    <span class="green"><b>51</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed </span>
+    <span class="green"><b>50</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,12 +92,12 @@
       
       <tr>
         <td class="strong"><a href="#e2b7255a7066ed3138c4b673263daad7ad3d65bc" class="src_link" title="lib/bitcoinaverage/ticker.rb">lib/bitcoinaverage/ticker.rb</a></td>
-        <td class="green strong">93.75 %</td>
-        <td>25</td>
+        <td class="yellow strong">87.5 %</td>
+        <td>27</td>
         <td>16</td>
-        <td>15</td>
-        <td>1</td>
-        <td>2.1</td>
+        <td>14</td>
+        <td>2</td>
+        <td>1.4</td>
       </tr>
       
     </tbody>
@@ -623,11 +623,11 @@
         <div class="source_table" id="e2b7255a7066ed3138c4b673263daad7ad3d65bc">
   <div class="header">
     <h3>lib/bitcoinaverage/ticker.rb</h3>
-    <h4><span class="green">93.75 %</span> covered</h4>
+    <h4><span class="yellow">87.5 %</span> covered</h4>
     <div>
       <b>16</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -709,76 +709,88 @@
         <li class="covered" data-hits="2" data-linenumber="13">
           <span class="hits">2</span>
           
-          <code class="ruby">        response=JSON(response)</code>
+          <code class="ruby">        binding.pry</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">        self.avg_24h = response[&quot;24h_avg&quot;] </code>
+          
+          <code class="ruby">        #response=JSON(response.to_s)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="15">
           <span class="hits">2</span>
           
-          <code class="ruby">        response.delete(&quot;24h_avg&quot;)</code>
+          <code class="ruby">        self.avg_24h = response[&quot;24h_avg&quot;] </code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
+          <code class="ruby">        response.delete(&quot;24h_avg&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">        #binding.pry</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
           <code class="ruby">        response.each do |key,value|</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="17">
-          <span class="hits">11</span>
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
           
           <code class="ruby">          send(&quot;#{key}=&quot;,value)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="19">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        self</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">        raise &quot;Error receiving response&quot;#&lt;- to be extended</code>
+          <code class="ruby">        self</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">      else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        raise &quot;Error receiving response&quot;#&lt;- to be extended</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>
