@@ -1,5 +1,12 @@
 require 'bitcoinaverage/ticker'
+require 'singleton'
 
-class MarketTicker < Ticker
-  attr_accessor :total_vol
+module BitcoinAverage
+  class MarketTicker < BitcoinAverage::Ticker
+    include Singleton
+    attr_accessor :total_vol
+    def avg_type
+      'market'
+    end
+  end
 end

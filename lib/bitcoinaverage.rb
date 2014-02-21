@@ -1,11 +1,11 @@
 require 'bitcoinaverage/market_ticker'
 require 'bitcoinaverage/global_ticker'
 
-class BitcoinAverage
+module BitcoinAverage
     def self.global(currency="USD")
-        @ticker = GlobalTicker.new currency, 'global'
+        GlobalTicker.instance.request_info currency
     end
     def self.market(currency="USD")
-        @ticker = MarketTicker.new currency, 'market'
+        MarketTicker.instance.request_info currency
     end
 end
