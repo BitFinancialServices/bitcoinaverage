@@ -1,5 +1,5 @@
-require 'bitcoinaverage'
 require 'spec_helper'
+require 'bitcoinaverage'
 
 SimpleCov.start
 describe BitcoinAverage do
@@ -38,6 +38,15 @@ describe BitcoinAverage do
       @response.last.should == 560.54
       @response.timestamp.should == 'Fri, 21 Feb 2014 16:24:27 -0000'
       @response.total_vol.should == 100667.13
+    end
+  end
+  describe 'unknown currency' do
+    before do
+      stub_request(:get, "https://api.bitcoinaverage.com/ticker/EEE").
+        to_return(status:404, body:"", headers:{})
+    end
+    it 'raises an error' do
+      expect{BitcoinAverage.market('EEE')}.to raise_error("EEE is not a known currency")
     end
   end
 end

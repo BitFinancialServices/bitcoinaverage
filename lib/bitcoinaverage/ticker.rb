@@ -7,7 +7,7 @@ module BitcoinAverage
     attr_accessor :avg_24h, :ask, :bid, :last, :timestamp
 
     def request_info currency='USD'
-      response= sendrequest self.avg_type
+      response= sendrequest self.avg_type, currency
       if response.success?
         #Small patch since an attribute can't be named "24h_avg"
         response=JSON(response)
@@ -18,7 +18,7 @@ module BitcoinAverage
         end
         self
       else
-        raise "Error receiving the response"#<- to be extended
+        raise "Error receiving response"#<- to be extended
       end
     end
   end
