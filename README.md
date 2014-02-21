@@ -8,9 +8,10 @@ Bitcoinaverage is an independent 'globally averaged bitcoin price' provider. The
 based on the volume and price of BTC in all currencies, together with a **Market** price, which only takes into account
 the volume of BTC directly exchangeable through that specific currency.
 For more information on the methods BitcoinAverage uses to calculate the price, please refer to their website, in
-particular [][this page].
-## First note
-The development of this gem has been *really* inspired by Erik Michaels-Ober's great [][mtgox] gem.
+particular [https://bitcoinaverage.com/explain.htm][this page].
+
+## Important first note
+The development of this gem has been *really* inspired by Erik Michaels-Ober's great [https://github.com/sferik/mtgox][mtgox] gem ( specially this README ;) ).
 
 ## Installation
     gem install bitcoinaverage
@@ -38,35 +39,12 @@ BitcoinAverage.global 'EUR'
 # Obtain the BitcoinAverage's market price in GBP
 BitcoinAverage.market 'GBP'
 
-# Fetch the last 48 hours worth of trades (takes a minute)
-puts MtGox.trades
-
-# Certain methods require authentication
-MtGox.configure do |config|
-  config.key = YOUR_MTGOX_KEY
-  config.secret = YOUR_MTGOX_SECRET
-end
-
-# Fetch your current balance
-puts MtGox.balance
-
-# Place a limit order to buy one bitcoin for $0.011
-MtGox.buy! 1.0, 0.011
-
-# Place a limit order to sell one bitcoin for $100
-MtGox.sell! 1.0, 100.0
-
-# Place a market order to sell one bitcoin
-MtGox.sell! 1.0, :market
-
-# Cancel order #1234567890
-MtGox.cancel 1234567890
-
-# Withdraw 1 BTC from your account
-MtGox.withdraw! 1.0, "1KxSo9bGBfPVFEtWNLpnUK1bfLNNT4q31L"
-
-# Switch to sending 'tonce' rather than 'nonce'
-MtGox.nonce_type = :tonce
+# Obtain the specific fields of BitcoinAverage's global price
+BitcoinAverage.global.last
+BitcoinAverage.global.bid
+BitcoinAverage.global.ask
+BitcoinAverage.global.volume_btc
+BitcoinAverage.global.volume_percent
 ```
 
 ## Supported Ruby Versions
