@@ -1,4 +1,5 @@
 require 'bitcoinaverage/requester'
+require 'json'
 
 module BitcoinAverage
   class Ticker
@@ -7,11 +8,17 @@ module BitcoinAverage
 
     def request_info currency='USD'
       response= sendrequest self.avg_type
-      #Small patch since an attribute can't be named "24h_avg"
-      self.avg_24h = response["24h_avg"] 
-      response.delete("24h_avg")
-      response.each do |key,value|
-        send("#{key}=",value)
+      if response.success?
+        #Small patch since an attribute can't be named "24h_avg"
+        response=JSON(response)
+        self.avg_24h = response["24h_avg"] 
+        response.delete("24h_avg")
+        response.each do |key,value|
+          send("#{key}=",value)
+        end
+        self
+      else
+        raise "Error receiving the response"#<- to be extended
       end
     end
   end

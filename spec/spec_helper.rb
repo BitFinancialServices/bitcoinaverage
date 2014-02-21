@@ -1,6 +1,39 @@
+#require 'pry'
+require 'simplecov'
+SimpleCov.start do
+  add_filter 'spec/'
+end
+#
+#module SimpleCov::Configuration
+#  def clean_filters
+#    binding.pry
+#    @filters = []
+#  end
+#end
+#
+#SimpleCov.configure do
+#  clean_filters
+#  load_adapter 'test_frameworks'
+#end
+#SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+#  SimpleCov::Formatter::HTMLFormatter,
+#  #Coveralls::SimpleCov::Formatter
+#]
+#
+#SimpleCov.start do
+#  add_filter '/spec/'
+#  minimum_coverage(98.89)
+#end
+require 'pry'
 require 'webmock/rspec'
-
 WebMock.disable_net_connect!(allow_localhost:true)
+
+def fixture_path
+  File.expand_path('../fixtures', __FILE__)
+end
+def fixture(file)
+  File.new(fixture_path + '/' + file)
+end
 
 #require 'simplecov'
 #require 'coveralls'
@@ -45,13 +78,7 @@ WebMock.disable_net_connect!(allow_localhost:true)
 #  stub_request(:post, 'https://data.mtgox.com' + path)
 #end
 #
-#def fixture_path
-#  File.expand_path('../fixtures', __FILE__)
-#end
 #
-#def fixture(file)
-#  File.new(fixture_path + '/' + file)
-#end
 #
 #module MtGox
 #  module Request

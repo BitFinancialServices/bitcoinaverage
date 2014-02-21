@@ -1,42 +1,43 @@
 require 'bitcoinaverage'
 require 'spec_helper'
 
+SimpleCov.start
 describe BitcoinAverage do
-  describe 'external request' do
-    it 'queries FactoryGirl contributors on Github' do
-      uri = URI('https://api.github.com/repos/thoughtbot/factory_girl/contributors')
-
-      response = Net::HTTP.get(uri)
-
-      expect(response).to be_an_instance_of(String)
+  describe '.global ' do
+    before do
+      stub_request(:get, "https://api.bitcoinaverage.com/ticker/global/USD").
+        to_return(status:200, body: fixture('global_USD.json'),headers:{})
+      @response=BitcoinAverage.global
+    end
+    it 'returns a GlobalTicker object properly filled' do
+      #binding.pry
+      #expect(BitcoinAverage.global).to be_a BitcoinAverage::GlobalTicker
+      expect(@response).to be_a BitcoinAverage::GlobalTicker
+      @response.avg_24h.should == 568.44
+      @response.ask.should == 566.15
+      @response.bid.should == 563.83
+      @response.last.should == 564.61
+      @response.timestamp.should == 'Fri, 21 Feb 2014 16:22:17 -0000'
+      @response.volume_btc.should == 100496.08
+      @response.volume_percent.should == 79.49
+    end
+  end
+  describe '.market ' do
+    before do
+      stub_request(:get, "https://api.bitcoinaverage.com/ticker/USD").
+        to_return(status:200, body: fixture('market_USD.json'),headers:{})
+      @response=BitcoinAverage.market
+    end
+    it 'returns a GlobalTicker object properly filled' do
+      #binding.pry
+      #expect(BitcoinAverage.global).to be_a BitcoinAverage::GlobalTicker
+      expect(@response).to be_a BitcoinAverage::MarketTicker
+      @response.avg_24h.should == 565.89
+      @response.ask.should == 562.54
+      @response.bid.should == 559.7
+      @response.last.should == 560.54
+      @response.timestamp.should == 'Fri, 21 Feb 2014 16:24:27 -0000'
+      @response.total_vol.should == 100667.13
     end
   end
 end
-#describe MtGox do
-#  describe '.new' do
-#    it 'returns a MtGox::Client' do
-#      expect(MtGox.new).to be_a MtGox::Client
-#    end
-#  end
-#
-#  describe '.configure' do
-#    it 'sets key and secret' do
-#      MtGox.configure do |config|
-#        config.key = 'key'
-#        config.secret = 'secret'
-#      end
-#
-#      expect(MtGox.key).to eq 'key'
-#      expect(MtGox.secret).to eq 'secret'
-#    end
-#
-#    it 'allows setting nonce type' do
-#      expect(MtGox.nonce_type).to eq(:nonce)
-#      MtGox.configure do |config|
-#        config.nonce_type = :tonce
-#      end
-#      expect(MtGox.nonce_type).to eq(:tonce)
-#    end
-#  end
-#
-#end

@@ -23,7 +23,7 @@ module BitcoinAverage
     #
     #Note: it's not run repeatedly, rather the result 
     #was written to a file.
-    #Note 2: require-ing 'csv' is necessary for this method
+    #Note 2: "require 'csv' " is necessary for this method
     def available_currencies
       all_ccy=HTTParty.get 'https://api.bitcoinaverage.com/ticker/global/all'
       all_ccy.map!{|k,v| k}
