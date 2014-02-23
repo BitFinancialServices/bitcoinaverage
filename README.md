@@ -11,7 +11,7 @@ For more information on the methods BitcoinAverage uses to calculate the price, 
 particular [https://bitcoinaverage.com/explain.htm][this page].
 
 ## Important first note
-The development of this gem has been *really* inspired by Erik Michaels-Ober's great [https://github.com/sferik/mtgox][mtgox] gem ( specially this README ;) ).
+The development of this gem has been *deeply* inspired by Erik Michaels-Ober's great [https://github.com/sferik/mtgox][mtgox] gem ( specially this README ;) ).
 
 ## Installation
     gem install bitcoinaverage
@@ -47,29 +47,28 @@ BitcoinAverage.global.volume_btc
 BitcoinAverage.global.volume_percent
 ```
 
-## Supported Ruby Versions
+## Tested Ruby Versions
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* Ruby 1.9.2
-* Ruby 1.9.3
-* Ruby 2.0.0
-* Ruby 2.1.0
+* ruby-1.9.3-p374
+* ruby-2.0.0-rc1
+* ruby-2.1.0
 
-If something doesn't work on one of these interpreters, it's a bug.
+## Contributing
+In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
 
-This library may inadvertently work (or seem to work) on other Ruby
-implementations, however support will only be provided for the versions listed
-above.
+Here are some ways *you* can contribute:
 
-If you would like this library to support another Ruby version, you may
-volunteer to be a maintainer. Being a maintainer entails making sure all tests
-run and pass on that implementation. When something breaks on your
-implementation, you will be responsible for providing patches in a timely
-fashion. If critical issues for a particular implementation exist at the time
-of a major release, support for that Ruby version may be dropped.
+* by using alpha, beta, and prerelease versions
+* by reporting bugs
+* by suggesting new features
+* by writing or editing documentation
+* by writing specifications
+* by writing code (**no patch is too small**: fix typos, add comments, clean up inconsistent whitespace)
+* by refactoring code
+* by closing [issues](http://github.com/Instagram/instagram-ruby-gem/issues)
+* by reviewing patches
 
 ## Copyright
-Copyright (c) 2011-2013 Erik Michaels-Ober. See [LICENSE][] for details.
-
-[
+Copyright (c) 2014 Toni Urcola. See [LICENSE][] for details.
