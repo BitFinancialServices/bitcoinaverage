@@ -1,26 +1,27 @@
 # Ruby wrapper for the BitcoinAverage API
 
-[![Coverage Status](https://coveralls.io/repos/sferik/mtgox/badge.png?branch=master)][coveralls]
+[![Gem Version]][gem]
+[![Coverage Status](https://coveralls.io/repos/git-toni/bitcoinaverage/badge.png)](https://coveralls.io/r/git-toni/bitcoinaverage)
+[gem]: https://rubygems.org/gems/bitcoinaverage
+[travis]: https://github.com/git-toni/bitcoinaverage
 
-[coveralls]: https://coveralls.io/r/git-toni/bitcoinaverage
+
 
 Bitcoinaverage is an independent 'globally averaged bitcoin price' provider. They provide a **Global** price,
 based on the volume and price of BTC in all currencies, together with a **Market** price, which only takes into account
 the volume of BTC directly exchangeable through that specific currency.
 For more information on the methods BitcoinAverage uses to calculate the price, please refer to their website, in
-particular [https://bitcoinaverage.com/explain.htm][this page].
+particular [this page](https://bitcoinaverage.com/explain.htm).
 
 ## Important first note
-The development of this gem has been *deeply* inspired by Erik Michaels-Ober's great [https://github.com/sferik/mtgox][mtgox] gem ( specially this README ;) ).
+The development of this gem has been *deeply* inspired by Erik Michaels-Ober's great [mtgox](https://github.com/sferik/mtgox) gem ( specially this README ;) ).
 
 ## Installation
     gem install bitcoinaverage
 
 
 ## Documentation
-[][documentation] Todo
-
-[documentation]: 
+TODO
 
 ## Usage 
 ```ruby
@@ -71,4 +72,4 @@ Here are some ways *you* can contribute:
 * by reviewing patches
 
 ## Copyright
-Copyright (c) 2014 Toni Urcola. See [LICENSE][] for details.
+Copyright (c) 2014 Toni Urcola. See [LICENSE](https://github.com/git-toni/bitcoinaverage/LICENSE) for details.

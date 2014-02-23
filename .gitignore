@@ -1,1 +1,6 @@
 Gemfile.lock
+coverage/*
+log/*
+*.gem
+mysession
+mysession.vim

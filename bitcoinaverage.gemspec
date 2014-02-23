@@ -1,17 +1,21 @@
+$:.push File.expand_path("../lib", __FILE__)
+require 'bitcoinaverage/version'
+
 Gem::Specification.new do |s|
   s.name        = 'bitcoinaverage'
-  s.version     = '0.0.0'
-  s.date        = '2014-02-20'
+  s.version     = BitcoinAverage::VERSION
   s.summary     = "Ruby Wrapper for the Bitcoinaverage API"
   s.description = "Ruby wrapper for the Bitcoinaverage API. Bitcoinaverage is an independent 'globally averaged bitcoin price' provider"
-  s.authors     = ["Toni U."]
-  s.files       = ["lib/bitcoinaverage.rb",
-                   "lib/bitcoinaverage/ticker.rb",
-                   "lib/bitcoinaverage/market_ticker.rb",
-                   "lib/bitcoinaverage/global_ticker.rb",
-                   "lib/bitcoinaverage/requester.rb",
-                  ]
-  s.homepage    =
-    'http://rubygems.org/gems/bitcoinaverage'
+  s.author      = ["Toni Urcola"]
+  s.email       = 'unmail.toni@gmail.com'
+  s.files       = `git ls-files`.split("\n")
+  s.test_files  = `git ls-files -- {test,spec}/*`.split("\n")
+  s.require_paths = ['lib']
+  s.required_ruby_version = '>= 1.9.3-p374'
+  s.add_dependency 'httparty'
+  s.add_dependency 'json'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'bundler'
+  s.homepage    = 'http://rubygems.org/gems/bitcoinaverage'
   s.license       = 'MIT'
 end
