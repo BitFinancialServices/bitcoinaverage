@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.email       = 'unmail.toni@gmail.com'
   s.files       = `git ls-files`.split("\n")
   s.test_files  = `git ls-files -- {test,spec}/*`.split("\n")
-  s.require_paths = ['lib']
-  s.required_ruby_version = '>= 1.9.3-p374'
+  s.require_paths = ["lib"]
+  s.required_ruby_version = '>= 1.9.3'
   s.add_dependency 'httparty'
   s.add_dependency 'json'
   s.add_development_dependency 'rspec'
