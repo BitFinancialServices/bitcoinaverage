@@ -11,7 +11,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 
 
 require 'rubygems'
-require 'pry'
 require 'rspec'
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow:'coverwalls.io',allow_localhost:true)
