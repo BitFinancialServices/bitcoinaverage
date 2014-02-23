@@ -2,6 +2,8 @@
 
 [![Gem Version]][gem]
 [![Coverage Status](https://coveralls.io/repos/git-toni/bitcoinaverage/badge.png)](https://coveralls.io/r/git-toni/bitcoinaverage)
+[![Build Status](https://travis-ci.org/git-toni/bitcoinaverage.png?branch=master)](https://travis-ci.org/git-toni/bitcoinaverage)
+
 [gem]: https://rubygems.org/gems/bitcoinaverage
 [travis]: https://github.com/git-toni/bitcoinaverage
 
