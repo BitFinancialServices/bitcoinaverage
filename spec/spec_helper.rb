@@ -10,6 +10,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 #Coveralls.wear!
 
 
+require 'rubygems'
 require 'pry'
 require 'rspec'
 require 'webmock/rspec'
