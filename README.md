@@ -5,9 +5,9 @@
 [![Build Status](https://travis-ci.org/git-toni/bitcoinaverage.png?branch=master)](https://travis-ci.org/git-toni/bitcoinaverage)
 
 
-Bitcoinaverage is an independent 'globally averaged bitcoin price' provider. They provide a **Global** price,
-based on the volume and price of BTC in all currencies, together with a **Market** price, which only takes into account
-the volume of BTC directly exchangeable through that specific currency.
+Bitcoinaverage is an independent 'globally averaged bitcoin price' provider. They provide on one hand a **Global** price,
+which is based on the volume and price of BTC in all currencies. And on the other hand they provide a **Market** price, which only takes into account
+the volume of BTC directly exchangeable using the chosen specific currency.
 For more information on the methods BitcoinAverage uses to calculate the price, please refer to their website, in
 particular [this page](https://bitcoinaverage.com/explain.htm).
 
