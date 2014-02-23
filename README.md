@@ -47,11 +47,11 @@ BitcoinAverage.global.volume_percent
 ```
 
 ## Tested Ruby Versions
-This library aims to support and is [tested against][travis] the following Ruby
+This library aims to support and is [tested against](https://travis-ci.org/git-toni/bitcoinaverage) the following Ruby
 implementations:
 
 * ruby-1.9.3-p374
-* ruby-2.0.0-rc1
+* ruby-2.0.0-p353
 * ruby-2.1.0
 
 ## Contributing
