@@ -1,6 +1,8 @@
 Gemfile.lock
 coverage
 coverage/*
+/coverage/
+coverage.data
 log/*
 *.gem
 mysession
