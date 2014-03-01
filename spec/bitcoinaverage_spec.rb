@@ -13,13 +13,13 @@ describe BitcoinAverage do
       # binding.pry
       # expect(BitcoinAverage.global).to be_a BitcoinAverage::GlobalTicker
       expect(@response).to be_a BitcoinAverage::GlobalTicker
-      @response.avg_24h.should == 568.44
-      @response.ask.should == 566.15
-      @response.bid.should == 563.83
-      @response.last.should == 564.61
-      @response.timestamp.should == 'Fri, 21 Feb 2014 16:22:17 -0000'
-      @response.volume_btc.should == 100496.08
-      @response.volume_percent.should == 79.49
+      expect(@response.avg_24h).to eq(568.44)
+      expect(@response.ask).to eq(566.15)
+      expect(@response.bid).to eq(563.83)
+      expect(@response.last).to eq(564.61)
+      expect(@response.timestamp).to eq('Fri, 21 Feb 2014 16:22:17 -0000')
+      expect(@response.volume_btc).to eq(100496.08)
+      expect(@response.volume_percent).to eq(79.49)
     end
   end
   describe '.market ' do
@@ -32,12 +32,12 @@ describe BitcoinAverage do
       # binding.pry
       # expect(BitcoinAverage.global).to be_a BitcoinAverage::GlobalTicker
       expect(@response).to be_a BitcoinAverage::MarketTicker
-      @response.avg_24h.should == 565.89
-      @response.ask.should == 562.54
-      @response.bid.should == 559.7
-      @response.last.should == 560.54
-      @response.timestamp.should == 'Fri, 21 Feb 2014 16:24:27 -0000'
-      @response.total_vol.should == 100667.13
+      expect(@response.avg_24h).to eq(565.89)
+      expect(@response.ask).to eq(562.54)
+      expect(@response.bid).to eq(559.7)
+      expect(@response.last).to eq(560.54)
+      expect(@response.timestamp).to eq('Fri, 21 Feb 2014 16:24:27 -0000')
+      expect(@response.total_vol).to eq(100667.13)
     end
   end
   describe 'unknown currency' do

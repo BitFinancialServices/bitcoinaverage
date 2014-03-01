@@ -14,6 +14,12 @@ require 'rspec'
 require 'webmock/rspec'
 WebMock.disable_net_connect!(:allow => 'coverwalls.io', :allow_localhost => true)
 
+RSpec.configure do |config|
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end
+
 def fixture_path
   File.expand_path('../fixtures', __FILE__)
 end
