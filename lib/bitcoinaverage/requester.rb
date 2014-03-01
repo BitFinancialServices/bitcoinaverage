@@ -9,7 +9,7 @@ module BitcoinAverage
       ccy_url = currency
       final_url = base_url + avg_url + ccy_url
 
-      response = HTTParty.get final_url
+      HTTParty.get(final_url)
     end
 
     def known_currency?(currency)
