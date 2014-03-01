@@ -21,7 +21,7 @@ The development of this gem has been *deeply* inspired by Erik Michaels-Ober's g
 ## Documentation
 TODO
 
-## Usage 
+## Usage
 ```ruby
 require 'rubygems'
 require 'bitcoinaverage'
