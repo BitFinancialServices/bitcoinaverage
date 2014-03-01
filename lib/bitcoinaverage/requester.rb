@@ -13,25 +13,11 @@ module BitcoinAverage
     end
 
     def known_currency?(currency)
-      av_currencies = File.open('lib/bitcoinaverage/available_currencies.csv', 'r')
-      .read
-      .parse_csv
-      true unless !av_currencies.include? currency
+      available_currencies.include?(currency)
     end
 
-    # Method to obtain all the available currencies
-    #
-    # Note: it's not run repeatedly, rather the result
-    # was written to a file.
-    # Note 2: "require 'csv' " is necessary for this method
-    #
-    #
-    # def available_currencies
-    #   all_ccy=HTTParty.get 'https://api.bitcoinaverage.com/ticker/global/all'
-    #   all_ccy.map!{|k,v| k}
-    #   file= File.open 'currencies_file.csv','w'
-    #   file.write all_ccy[0..-2].to_csv
-    #   file.close
-    # end
+    def available_currencies
+      @available_currencies ||= File.open('lib/bitcoinaverage/available_currencies.csv', 'r').read.parse_csv
+    end
   end
 end
