@@ -17,7 +17,8 @@ module BitcoinAverage
     end
 
     def available_currencies
-      @available_currencies ||= File.open('lib/bitcoinaverage/available_currencies.csv', 'r').read.parse_csv
+      #@available_currencies ||= File.open('lib/bitcoinaverage/available_currencies.csv', 'r').read.parse_csv
+      @available_currencies ||= File.open(File.expand_path(File.dirname(__FILE__))+'/available_currencies.csv', 'r').read.parse_csv
     end
   end
 end

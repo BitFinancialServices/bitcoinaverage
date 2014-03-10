@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 require 'simplecov'
 require 'coveralls'
 
