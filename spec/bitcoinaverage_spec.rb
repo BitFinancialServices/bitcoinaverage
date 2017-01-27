@@ -6,7 +6,7 @@ describe BitcoinAverage do
   describe '.global ' do
     before do
       stub_request(:get, 'https://api.bitcoinaverage.com/ticker/global/USD').
-        to_return(:status => 200, :body => fixture('global_USD.json'), :headers => {})
+        to_return(:status => 200, :body => fixture('global_USD.json'), :headers => {'Content-Type': 'application/json'})
       @response = BitcoinAverage.global
     end
     it 'returns a GlobalTicker object properly filled' do

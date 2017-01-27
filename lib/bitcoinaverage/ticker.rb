@@ -10,7 +10,6 @@ module BitcoinAverage
       response = get(avg_type, currency)
       if response.success?
         # Small patch since an attribute can't be named "24h_avg"
-        response = JSON.load(response.to_s) unless response.is_a?(Hash)
         self.avg_24h = response['24h_avg']
         response.delete('24h_avg')
         response.each do |key, value|
